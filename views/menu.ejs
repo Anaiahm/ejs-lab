@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - <%= restaurant.name %></title>
+</head>
+<body>
+  <h1>Menu for <%= restaurant.name %></h1>
+
+  <h2>Mains</h2>
+  <% menu.filter(item => item.category === 'mains').forEach(item => { %>
+    <div>
+      <h3><%= item.name %></h3>
+      <p><strong>Price:</strong> $<%= item.price.toFixed(2) %></p>
+      <p><strong>Rating:</strong> <%= item.rating %> stars</p>
+      <p><strong>Details:</strong> <%= item.details %></p>
+    </div>
+  <% }); %>
+
+  <h2>Desserts</h2>
+  <% menu.filter(item => item.category === 'desserts').forEach(item => { %>
+    <div>
+      <h3><%= item.name %></h3>
+      <p><strong>Price:</strong> $<%= item.price.toFixed(2) %></p>
+      <p><strong>Rating:</strong> <%= item.rating %> stars</p>
+      <p><strong>Details:</strong> <%= item.details %></p>
+    </div>
+  <% }); %>
+
+  <h2>Sides</h2>
+  <% menu.filter(item => item.category === 'sides').forEach(item => { %>
+    <div>
+      <h3><%= item.name %></h3>
+      <p><strong>Price:</strong> $<%= item.price.toFixed(2) %></p>
+      <p><strong>Rating:</strong> <%= item.rating %> stars</p>
+      <p><strong>Details:</strong> <%= item.details %></p>
+    </div>
+  <% }); %>
+
+  <a href="/">Back to Home</a>
+</body>
+</html>
